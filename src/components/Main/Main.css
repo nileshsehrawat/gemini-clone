@@ -43,6 +43,7 @@
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
   padding: 20px;
+  margin-bottom: 20px;
 }
 
 .main .card {
@@ -179,57 +180,83 @@
   line-height: 1.8;
 }
 
-@mdia (max-width:600px) {
-  .mian .bottom input {
+@media (max-width: 600px) {
+  .main .bottom input {
     flex: none;
-    width: 20px;
+    width: clamp(20px, 4vw, 40px);
   }
 
-  .mian .bottom img {
-    width: 20px;
+  .main .bottom img {
+    width: clamp(20px, 4vw, 40px);
   }
 
   .search-box {
-    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(5px, 2vw, 15px);
+    padding: clamp(5px, 1.5vw, 10px) clamp(10px, 3vw, 20px);
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Ensures padding doesn't mess with layout */
+  }
+
+  .search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 8px;
+    font-size: clamp(14px, 4vw, 18px);
   }
 
   .search-box div {
-    gap: 5px;
+    display: flex;
+    align-items: center;
+    gap: clamp(5px, 2vw, 15px);
+  }
+
+  .search-box img {
+    width: clamp(18px, 5vw, 24px);
+    cursor: pointer;
   }
 
   .main .greet {
-    margin: 30px 0px;
-    font-size: 40px;
+    margin: clamp(20px, 5vw, 40px) 0;
+    font-size: clamp(32px, 8vw, 40px);
     color: #c4c7c5;
     font-weight: 500;
-    padding: 15px;
+    padding: clamp(10px, 4vw, 20px);
   }
 
   .main .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
-    padding: 10px;
-    max-width: 40px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: clamp(10px, 3vw, 20px);
+    padding: clamp(5px, 2vw, 15px);
+    max-width: 100%;
   }
 
   .main .card {
-    height: 150px;
-    padding: 10px;
+    height: clamp(120px, 35vw, 150px);
+    padding: clamp(8px, 3vw, 12px);
   }
 
   .main .card img {
-    width: 35px;
-    padding: 5px;
+    width: clamp(25px, 7vw, 40px);
+    padding: clamp(3px, 1.5vw, 6px);
     position: absolute;
     background-color: white;
     border-radius: 20px;
-    bottom: 10px;
-    right: 10px;
+    bottom: clamp(5px, 2vw, 10px);
+    right: clamp(5px, 2vw, 10px);
   }
 
   .main .card p {
     color: #585858;
-    font-size: 18px;
+    font-size: clamp(14px, 4vw, 18px);
+  }
+
+  .main .bottom-info {
+    font-size: clamp(10px, 3vw, 13px);
   }
 }

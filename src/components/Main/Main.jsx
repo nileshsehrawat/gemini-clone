@@ -80,7 +80,7 @@ const Main = () => {
               name=""
               id=""
             />
-            <div>
+            <div className="search-icons">
               <img src={assets.gallery_icon} alt="gallery_icon" />
               <img src={assets.mic_icon} alt="mic_icon" />
               {input ? (
